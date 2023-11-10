@@ -9,11 +9,11 @@ export default function Home() {
       <div className="w-1/2 flex flex-col items-start">
         <Header text="linkr" />
         <RetroScreen />
-        <div className="flex flex-row space-x-2 w-full items-center pt-6">
-          <Input placeholder="enter url here:" />
+        <div className="flex flex-row space-x-2 w-full items-center pt-6 animate-[bounce_1s_ease-in-out_4.5]">
+          <Input placeholder="enter url here" />
           <Button>shorten</Button>
         </div>
       </div>
-    </div>
+    </div >
   )
 }
