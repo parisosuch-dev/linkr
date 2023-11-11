@@ -1,6 +1,6 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { GeistMono } from 'geist/font/mono';
+import { GeistMono } from 'geist/font';
 
 export const metadata: Metadata = {
   title: 'linkr',
