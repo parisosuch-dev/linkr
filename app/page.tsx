@@ -3,7 +3,11 @@ import RetroScreen from "@/components/retroscreen"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 
+import { useState } from "react"
+
 export default function Home() {
+  const [isAuth, setIsAuth] = useState(false);
+
   return (
     <div className="text-primary bg-gray-100 min-h-screen flex flex-col items-center justify-center">
       <div className="sm:w-1/2 flex flex-col items-start">
