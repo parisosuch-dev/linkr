@@ -1,4 +1,3 @@
-import createServerComponentClient from "@/lib/supabase/supabase-server"
 import { createClientComponentClient, type User } from "@supabase/auth-helpers-nextjs";
 import validator from 'validator';
 
