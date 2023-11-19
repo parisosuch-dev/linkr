@@ -4,15 +4,14 @@ import validator from 'validator';
 const postLink = async ({ url, user }: { url: string, user: User }) => {
     // verify if url is valid
     if (!validator.isURL(url)) {
-        return "> url is not valid.";
+        return { data: null, error: { message: "url is not valid." } };
     }
 
     const supabase = createClientComponentClient();
-    const { error } = await supabase.from('link').insert({ url: url, user: user.id });
+    const { data, error } = await supabase.from('link').insert({ url: url, user: user.id }).select('id');
 
-    if (error) {
-        return error.message;
-    }
+    return { data, error }
+
 }
 
 export default postLink;

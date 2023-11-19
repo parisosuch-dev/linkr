@@ -12,6 +12,7 @@ import NotAuthPopup from "@/components/notauthpopup"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import postLink from "@/lib/supabase/postLink"
+import ConsoleOut from "@/components/consoleout"
 
 
 
@@ -19,7 +20,8 @@ export default function Home() {
   const supabase = createClientComponentClient();
   const [user, setUser] = useState<User | null>(null);
   const [url, setUrl] = useState('');
-  const [errorMessage, setErrorMessage] = useState<string | undefined>('');
+  const [errorMessage, setErrorMessage] = useState<string | undefined>(undefined);
+  const [newLink, setNewLink] = useState<null | string>(null);
 
   useEffect(() => {
     const getUser = async () => {
@@ -41,16 +43,26 @@ export default function Home() {
             <Button
               onClick={() => {
                 // post link to db
-                postLink({ url, user }).then((res) => {
-                  setErrorMessage(res);
+                postLink({ url, user }).then(({ data, error }) => {
+                  if (error) {
+                    setErrorMessage(error.message);
+                    setNewLink(null);
+                  } else {
+                    setErrorMessage(undefined);
+                    data ? setNewLink(window.location.origin + "/l/" + data[0].id) : setNewLink(null);
+                  }
                 });
               }}
               className="w-full sm:w-1/6">shorten</Button>
             :
             <NotAuthPopup />
           }
+
         </div>
-        <p className="pt-4 font-bold text-sm sm:text-lg">{errorMessage}</p>
+        <div className="flex flex-row items-center justify-center sm:justify-start pt-2 w-full">
+          {errorMessage ? <ConsoleOut isError={true} text={errorMessage} /> : null}
+          {newLink ? <ConsoleOut text={newLink} /> : null}
+        </div>
       </div>
     </div >
   )
