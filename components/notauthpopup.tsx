@@ -11,44 +11,27 @@ import {
 
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import Link from "next/link";
 
 const NotAuthPopup = () => {
     return (
         <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline">Edit Profile</Button>
+        <Button onClick={() => {
+          console.log("click!")
+        }}>shorten</Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[425px]">
+      <DialogContent className="sm:w-full">
         <DialogHeader>
-          <DialogTitle>Edit profile</DialogTitle>
-          <DialogDescription>
-            Make changes to your profile here. Click save when you're done.
+          <DialogTitle className="text-xl sm:text-5xl font-medium">You aren't signed in to linkr!</DialogTitle>
+          <DialogDescription className="text-sm sm:text-lg">
+            If you want to keep your links, you need to sign in or create an account.
           </DialogDescription>
         </DialogHeader>
-        <div className="grid gap-4 py-4">
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="name" className="text-right">
-              Name
-            </Label>
-            <Input
-              id="name"
-              defaultValue="Pedro Duarte"
-              className="col-span-3"
-            />
-          </div>
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="username" className="text-right">
-              Username
-            </Label>
-            <Input
-              id="username"
-              defaultValue="@peduarte"
-              className="col-span-3"
-            />
-          </div>
-        </div>
-        <DialogFooter>
-          <Button type="submit">Save changes</Button>
+        <Button>Login with Provider 1</Button>
+        <Button>Login with Provider 2</Button>
+        <DialogFooter className="flex flex-col items-center">
+          <Link href="/" className="underline text-sm">I'll pass...</Link>
         </DialogFooter>
       </DialogContent>
     </Dialog>
