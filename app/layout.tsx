@@ -2,7 +2,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { GeistMono } from 'geist/font';
 import Nav from '@/components/nav';
-import { createClientComponentClient } from "@supabase/auth-helpers-nextjs"
+import createServerComponentClient from "@/lib/supabase/supabase-server"
 
 export const metadata: Metadata = {
   title: 'linkr',
@@ -14,7 +14,7 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const supabase = createClientComponentClient();
+  const supabase = createServerComponentClient();
   const {
     data: { user },
   } = await supabase.auth.getUser();
