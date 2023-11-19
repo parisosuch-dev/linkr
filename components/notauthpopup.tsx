@@ -11,9 +11,13 @@ import {
 
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import supabaseServer from "@/lib/supabase/supabase-server";
+import { createClientComponentClient } from "@supabase/auth-helpers-nextjs"
 import Link from "next/link";
 
 const NotAuthPopup = () => {
+  const supabase = createClientComponentClient();
+
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -28,8 +32,11 @@ const NotAuthPopup = () => {
             If you want to keep your links, you need to sign in or create an account.
           </DialogDescription>
         </DialogHeader>
-        <Button>Login with Provider 1</Button>
-        <Button>Login with Provider 2</Button>
+        <Button onClick={() => {
+          supabase.auth.signInWithOAuth({
+            provider: 'google'
+          });
+        }}>Login with Google</Button>
         <DialogFooter className="flex flex-col items-center">
           <Link href="/" className="underline text-sm">I&apos;ll pass...</Link>
         </DialogFooter>
