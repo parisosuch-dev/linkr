@@ -17,11 +17,11 @@ const NotAuthPopup = () => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button onClick={() => {
+        <Button className="w-full sm:w-1/6" onClick={() => {
           console.log("click!")
         }}>shorten</Button>
       </DialogTrigger>
-      <DialogContent className="sm:w-full shadow-[5px_5px_0_0] sm:shadow-[7px_7px_0_0] border-2 sm:border-4 border-primary">
+      <DialogContent className="sm:w-full shadow-[5px_5px_0_0] border-2 sm:border-4 border-primary">
         <DialogHeader>
           <DialogTitle className="text-xl sm:text-5xl font-medium">You aren't signed in to linkr!</DialogTitle>
           <DialogDescription className="text-sm sm:text-lg">
