@@ -13,7 +13,7 @@ export default function urlReroute({ params }: { params: { urlID: string } }) {
                 window.location.assign("https://" + url)
             }
         })
-    }, [])
+    }, [params.urlID])
 
     return (
         <div className="flex flex-col items-center justify-center min-h-screen space-y-2">
