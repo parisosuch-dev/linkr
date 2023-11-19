@@ -16,9 +16,9 @@ export default function urlReroute({ params }: { params: { urlID: string } }) {
     }, [])
 
     return (
-        <div className="flex flex-col items-center justify-center">
-            <h1>thanks for stopping by!</h1>
-            <h2>~linkr</h2>
+        <div className="flex flex-col items-center justify-center min-h-screen space-y-2">
+            <h1 className="text-4xl sm:text-6xl font-bold">thanks for stopping by!</h1>
+            <h2 className="text-xl sm:text-3xl font-medium">~linkr</h2>
         </div>
     )
     // get the url based on the id being passed in the parameter
