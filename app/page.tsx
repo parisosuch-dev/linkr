@@ -34,7 +34,7 @@ export default function Home() {
         <RetroScreen />
         <div className="flex flex-col space-y-2 sm:space-y-0 sm:flex-row space-x-0 sm:space-x-2 w-full items-center pt-4 sm:pt-6">
           <Input placeholder="$ enter url here:" />
-          {user ? <Button className="w-full">shorten</Button> : <NotAuthPopup />}
+          {user ? <Button className="w-full sm:w-1/6">shorten</Button> : <NotAuthPopup />}
         </div>
       </div>
     </div >
