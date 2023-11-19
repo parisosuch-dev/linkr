@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import getLink from "@/lib/supabase/getLink";
 
-export default function urlReroute({ params }: { params: { urlID: string } }) {
+export default function URLReroute({ params }: { params: { urlID: string } }) {
 
     useEffect(() => {
         getLink(params.urlID).then((url: string) => {
