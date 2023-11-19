@@ -28,7 +28,7 @@ export default function Home() {
   }, [])
 
   return (
-    <div className="text-primary bg-gray-100 min-h-screen flex flex-col items-center justify-center">
+    <div className="text-primary bg-gray-100 flex flex-col items-center justify-center pt-32 sm:pt-0">
       <div className="w-5/6 sm:w-1/2 flex flex-col items-start">
         <Header text="~linkr" />
         <RetroScreen />
