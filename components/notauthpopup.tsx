@@ -14,14 +14,14 @@ import { Label } from "@/components/ui/label"
 import Link from "next/link";
 
 const NotAuthPopup = () => {
-    return (
-        <Dialog>
+  return (
+    <Dialog>
       <DialogTrigger asChild>
         <Button onClick={() => {
           console.log("click!")
         }}>shorten</Button>
       </DialogTrigger>
-      <DialogContent className="sm:w-full">
+      <DialogContent className="sm:w-full shadow-[5px_5px_0_0] sm:shadow-[7px_7px_0_0] border-2 sm:border-4 border-primary">
         <DialogHeader>
           <DialogTitle className="text-xl sm:text-5xl font-medium">You aren't signed in to linkr!</DialogTitle>
           <DialogDescription className="text-sm sm:text-lg">
@@ -35,7 +35,7 @@ const NotAuthPopup = () => {
         </DialogFooter>
       </DialogContent>
     </Dialog>
-    );
+  );
 };
 
 export default NotAuthPopup;
