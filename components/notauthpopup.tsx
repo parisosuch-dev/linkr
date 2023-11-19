@@ -23,7 +23,7 @@ const NotAuthPopup = () => {
       </DialogTrigger>
       <DialogContent className="sm:w-full shadow-[5px_5px_0_0] border-2 sm:border-4 border-primary">
         <DialogHeader>
-          <DialogTitle className="text-xl sm:text-5xl font-medium">You aren't signed in to linkr!</DialogTitle>
+          <DialogTitle className="text-xl sm:text-5xl font-medium">You aren&apos;t signed in to linkr!</DialogTitle>
           <DialogDescription className="text-sm sm:text-lg">
             If you want to keep your links, you need to sign in or create an account.
           </DialogDescription>
@@ -31,7 +31,7 @@ const NotAuthPopup = () => {
         <Button>Login with Provider 1</Button>
         <Button>Login with Provider 2</Button>
         <DialogFooter className="flex flex-col items-center">
-          <Link href="/" className="underline text-sm">I'll pass...</Link>
+          <Link href="/" className="underline text-sm">I&apos;ll pass...</Link>
         </DialogFooter>
       </DialogContent>
     </Dialog>
