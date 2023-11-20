@@ -21,8 +21,4 @@ export default function URLReroute({ params }: { params: { urlID: string } }) {
             <h2 className="text-xl sm:text-3xl font-medium">~linkr</h2>
         </div>
     )
-    // get the url based on the id being passed in the parameter
-
-    // redirect user to that url
-
 }
