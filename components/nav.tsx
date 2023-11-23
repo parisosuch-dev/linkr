@@ -18,10 +18,6 @@ import supabase from "@/lib/supabase/supabase-browser"
 const Nav = ({ user }: { user: User | null }) => {
     const linkStyle = "text-md sm:text-2xl";
 
-    supabase.auth.getUser().then((res) => {
-        user = res.data.user;
-    });
-
     const authNav = (
         <Link className={linkStyle} href='/my-account'>my account</Link>
     )
