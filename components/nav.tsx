@@ -1,18 +1,16 @@
 'use client'
 
-import { useEffect, useState } from "react"
 import Link from "next/link"
-import { createClientComponentClient, type User } from "@supabase/auth-helpers-nextjs"
-import { usePathname } from "next/navigation"
+import { type User } from "@supabase/auth-helpers-nextjs"
 import {
     Dialog,
     DialogContent,
     DialogDescription,
-    DialogFooter,
     DialogHeader,
     DialogTitle,
     DialogTrigger,
 } from "@/components/ui/dialog"
+import { Button } from "./ui/button"
 import supabase from "@/lib/supabase/supabase-browser"
 
 const Nav = ({ user }: { user: User | null }) => {
@@ -22,7 +20,24 @@ const Nav = ({ user }: { user: User | null }) => {
         <Link className={linkStyle} href='/my-account'>my account</Link>
     )
     const notAuthNav = (
-        <Link className={linkStyle} href='/sign-in'>sign in</Link>
+        <Dialog>
+            <DialogTrigger asChild>
+                <button className={linkStyle}>sign in</button>
+            </DialogTrigger>
+            <DialogContent className="sm:w-full shadow-[5px_5px_0_0] border-2 sm:border-4 border-primary">
+                <DialogHeader>
+                    <DialogTitle className="text-xl pt-2 sm:text-5xl font-medium">Sign In to Linkr</DialogTitle>
+                    <DialogDescription className="text-sm sm:text-lg text-center">
+                        (you will get to keep your links)
+                    </DialogDescription>
+                </DialogHeader>
+                <Button onClick={() => {
+                    supabase.auth.signInWithOAuth({
+                        provider: 'google'
+                    });
+                }}>Login with Google</Button>
+            </DialogContent>
+        </Dialog>
     )
 
     return (
