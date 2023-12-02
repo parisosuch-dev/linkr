@@ -1,8 +1,8 @@
-interface Link {
+interface Linkr {
     url: string,
     id: string,
     user: string,
     created_at: string,
 }
 
-export default Link;
+export default Linkr;
