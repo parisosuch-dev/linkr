@@ -26,7 +26,7 @@ const Nav = ({ user }: { user: User | null }) => {
             </DialogTrigger>
             <DialogContent className="sm:w-full shadow-[5px_5px_0_0] border-2 sm:border-4 border-primary">
                 <DialogHeader>
-                    <DialogTitle className="text-xl pt-2 sm:text-5xl font-medium">Sign In to Linkr</DialogTitle>
+                    <DialogTitle className="text-xl pt-2 sm:text-5xl font-medium">Sign In</DialogTitle>
                     <DialogDescription className="text-sm sm:text-lg text-center">
                         (you will get to keep your links)
                     </DialogDescription>
