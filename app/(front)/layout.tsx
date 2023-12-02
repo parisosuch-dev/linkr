@@ -14,16 +14,10 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const supabase = createServerComponentClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-
-
   return (
     <html lang="en">
       <body className={GeistMono.className + " bg-gray-100 min-h-screen"}>
-        <Nav user={user} />
+        <Nav />
         {children}
       </body>
     </html>

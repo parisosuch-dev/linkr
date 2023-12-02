@@ -1,6 +1,7 @@
 'use client'
 
 import Link from "next/link"
+import { useState, useEffect } from "react"
 import { type User } from "@supabase/auth-helpers-nextjs"
 import {
     Dialog,
@@ -11,9 +12,18 @@ import {
     DialogTrigger,
 } from "@/components/ui/dialog"
 import { Button } from "./ui/button"
-import supabase from "@/lib/supabase/supabase-browser"
+import { createClientComponentClient } from "@supabase/auth-helpers-nextjs"
 
-const Nav = ({ user }: { user: User | null }) => {
+const Nav = () => {
+    const supabase = createClientComponentClient();
+    const [user, setUser] = useState<User | null>(null);
+
+    useEffect(() => {
+        supabase.auth.getUser().then(({ data: { user } }) => {
+            setUser(user);
+        });
+    }, [])
+
     const linkStyle = "text-md sm:text-2xl";
 
     const authNav = (
