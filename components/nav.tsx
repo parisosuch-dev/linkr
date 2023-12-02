@@ -27,9 +27,9 @@ const Nav = () => {
     const linkStyle = "text-md sm:text-2xl";
 
     const authNav = (
-        <div className="flex flex-row-reverse gap-8">
-            <Link className={linkStyle} href='/links'>my links</Link>
-            <Link className={linkStyle} href='/account'>my account</Link>
+        <div className="flex flex-row gap-8">
+            <Link className={linkStyle} href='/links'>links</Link>
+            <Link className={linkStyle} href='/account'>account</Link>
         </div>
     )
     const notAuthNav = (
