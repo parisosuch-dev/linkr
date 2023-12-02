@@ -29,14 +29,15 @@ export default function LinkControl({ link }: { link: Linkr }) {
         return true
     }
     return (
-        <div className="grid grid-cols-2 justify-items-center items-center">
-            <div className="w-1/2">
-                <a className="underline font-bold text-lg sm:text-2xl p-2" href={link.url}>{link.url}</a>
+        <div className="sm:grid sm:grid-cols-3 sm:justify-items-center sm:items-center p-4 space-y-4 border-4 rounded-md">
+            <div className="w-full">
+                <a className="underline font-bold text-lg sm:text-2xl p-2" href={window.location.origin + "/l/" + link.id}>{link.url}</a>
                 <p className="border-4 bg-gray-200 rounded-full w-max px-0.5 sm:px-2 text-xs sm:text-lg">{timestamp}</p>
             </div>
+            <Button className="w-full" onClick={() => navigator.clipboard.writeText(window.location.origin + "/l/" + link.id)}>copy to clipboard</Button>
             <Dialog>
                 <DialogTrigger asChild>
-                    <Button className="w-1/2">delete</Button>
+                    <Button className="w-full">delete</Button>
                 </DialogTrigger>
                 <DialogContent className="sm:w-full shadow-[5px_5px_0_0] border-2 sm:border-4 border-primary">
                     <DialogHeader>

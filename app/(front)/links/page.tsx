@@ -38,7 +38,6 @@ export default function Links() {
             <Button
                 className="w-1/2"
                 onClick={() => {
-                    console.log("here")
                     router.push("/");
                 }}>add one</Button>
         </div>
