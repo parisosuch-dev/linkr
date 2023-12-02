@@ -32,7 +32,7 @@ const NotAuthPopup = ({ url, user }: { url: string, user: User | null }) => {
       </DialogTrigger>
       <DialogContent className="sm:w-full shadow-[5px_5px_0_0] border-2 sm:border-4 border-primary">
         <DialogHeader>
-          <DialogTitle className="text-xl sm:text-5xl font-medium">You aren&apos;t signed in to linkr!</DialogTitle>
+          <DialogTitle className="text-xl sm:text-5xl font-medium text-center">You aren&apos;t signed in to linkr!</DialogTitle>
           <DialogDescription className="text-sm sm:text-lg">
             If you want to keep your links, you need to sign in or create an account.
           </DialogDescription>
