@@ -29,7 +29,7 @@ export default function LinkControl({ link }: { link: Linkr }) {
         return true
     }
     return (
-        <div className="sm:grid sm:grid-cols-3 sm:justify-items-center sm:items-center p-4 space-y-4 border-4 rounded-md">
+        <div className="sm:grid sm:grid-cols-3 sm:justify-items-center sm:items-center p-4 space-y-4 border-4 rounded-md sm:gap-8">
             <div className="w-full">
                 <a className="underline font-bold text-lg sm:text-2xl p-2" href={window.location.origin + "/l/" + link.id}>{link.url}</a>
                 <p className="border-4 bg-gray-200 rounded-full w-max px-0.5 sm:px-2 text-xs sm:text-lg">{timestamp}</p>
