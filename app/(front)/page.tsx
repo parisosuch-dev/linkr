@@ -55,7 +55,7 @@ export default function Home() {
               }}
               className="w-full sm:w-1/6">shorten</Button>
             :
-            <NotAuthPopup />
+            <NotAuthPopup url={url} user={user} />
           }
 
         </div>
