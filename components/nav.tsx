@@ -17,7 +17,10 @@ const Nav = ({ user }: { user: User | null }) => {
     const linkStyle = "text-md sm:text-2xl";
 
     const authNav = (
-        <Link className={linkStyle} href='/my-account'>my account</Link>
+        <div className="flex flex-row-reverse gap-8">
+            <Link className={linkStyle} href='/links'>my links</Link>
+            <Link className={linkStyle} href='/account'>my account</Link>
+        </div>
     )
     const notAuthNav = (
         <Dialog>
@@ -42,7 +45,7 @@ const Nav = ({ user }: { user: User | null }) => {
 
     return (
         <div className="flex flex-row-reverse px-8 py-4 sm:px-32 sm:py-16">
-            <div className="space-x-8">
+            <div className="space-x-8 flex flex-row">
                 <Link className={linkStyle} href="/">home</Link>
                 {user ? authNav : notAuthNav}
             </div>
