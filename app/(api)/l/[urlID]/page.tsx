@@ -16,7 +16,7 @@ export default function URLReroute({ params }: { params: { urlID: string } }) {
     }, [params.urlID])
 
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen space-y-2">
+        <div className="flex flex-col items-center justify-center min-h-screen space-y-2 text-center">
             <h1 className="text-4xl sm:text-6xl font-bold">thanks for stopping by!</h1>
             <h2 className="text-xl sm:text-3xl font-medium">~linkr</h2>
         </div>
