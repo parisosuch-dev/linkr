@@ -2,6 +2,7 @@ import '../globals.css'
 import type { Metadata } from 'next'
 import { GeistMono } from 'geist/font';
 import Nav from '@/components/nav';
+import { Analytics } from '@vercel/analytics/react';
 import createServerComponentClient from "@/lib/supabase/supabase-server"
 
 export const metadata: Metadata = {
@@ -19,6 +20,7 @@ export default async function RootLayout({
       <body className={GeistMono.className + " bg-gray-100 min-h-screen"}>
         <Nav />
         {children}
+        <Analytics />
       </body>
     </html>
   )
