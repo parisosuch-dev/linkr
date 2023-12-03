@@ -30,7 +30,7 @@ const Nav = () => {
         <div className="flex flex-row gap-8">
             <Link className={linkStyle} href='/links'>links</Link>
             <Link className={linkStyle} href='/account'>account</Link>
-            <Link className={linkStyle} href='/sign-out'>sign out</Link>
+            <Link className={linkStyle} href='/sign-out'>signout</Link>
         </div>
     )
     const notAuthNav = (
