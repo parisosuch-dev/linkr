@@ -46,11 +46,10 @@ export default function LinkControl({ link }: { link: Linkr }) {
                             This will permanently delete your short link: {`${link.url}`}
                         </DialogDescription>
                     </DialogHeader>
-                    <DialogClose asChild>
-                        <Button onClick={() => {
-                            deleteLink();
-                        }}>Delete the link</Button>
-                    </DialogClose>
+                    <Button onClick={() => {
+                        deleteLink();
+                        <DialogClose />
+                    }}>Delete the link</Button>
                 </DialogContent>
             </Dialog>
         </div>
